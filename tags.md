@@ -3,16 +3,36 @@ title: 分类标签
 layout: default
 ---
 
+
 <script type="text/javascript">
-  var href = window.location.href;
-  var pos = href.indexOf('?tag=');
-  var paraStr = href.substring(pos + 5);
-  if (pos > 0) {
-    showTag(decodeURI(paraStr));
-  } else {
-    showTag("");
+  function showTag(tagStr) {
+    $.getJSON("../post.json",
+    function(data) {
+      $('#show-tag').empty(content);
+      var content = "<h2>分类：" + tagStr + "</h2><ul class=\"posts\">";
+      var count = 0;
+      $.each(data,
+      function(i, item) {
+        $.each(item.tags,
+        function(j, tag) {
+          if (tag == tagStr) {
+            content += "<li class=\"listing-item\"><time datetime=\"" + item.date + "\">" + item.date + "</time><a href=\"" + item.url + "\">" + item.title + "</a></li>";
+            count++;
+          }
+
+        });
+      });
+      if (count > 0) {
+        content += "</ul>";
+        postNumStr = "<span>（" + count + "篇文章）</span>";
+        $('#show-tag').append(content);
+        $('#show-tag>h2').append(postNumStr);
+      }
+    });
   }
 </script>
+
+
 <section class="content">
     <article id="index">
         <h2>所有分类标签：</h2>

@@ -3,7 +3,7 @@ layout: post
 title: "Lorem ipsum dolor sit amet"
 date: 2018-01-27 19:42:06 +0800
 categories: jekyll
-tags: jekyll,test
+tags: jekyll test
 comments: true
 ---
 

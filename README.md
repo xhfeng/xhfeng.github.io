@@ -1,1 +1,5 @@
-# xhfeng.github.io
+博客
+============
+
+http://xuehaifeng.cn
+xhfeng.github.io

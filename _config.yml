@@ -37,7 +37,7 @@ disqus: ''
 
 permalink: /:year/:month/:title
 paginate: 3
-recentposts: 10
+recentposts: 1
 
 highlighter: rouge
 markdown: kramdown

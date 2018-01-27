@@ -3,9 +3,9 @@
 </div>
 
 <div class="sidebar well">
-    <h1>Recent Posts</h1>
+    <h1>近期文章</h1>
     <ul>
-        {% for post in site.posts limit:5 %}
+        {% for post in site.posts limit:site.recentposts %}
           <li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}
     </ul>

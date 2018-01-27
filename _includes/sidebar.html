@@ -11,6 +11,10 @@
     </ul>
 </div>
 
+<div class="well">
+{% include category_cloud.html %}
+</div>
+
 <div class="sidebar well">
     <h1>Tags</h1>
 	<ul>
@@ -20,7 +24,7 @@
 		{% endfor %}
 	{% else %}
 		{% for tag in site.tags %} 
-		<li><a href="#{{ tag[0] }}-ref">{{ tag[0] }} <span style="color: #999999;" >({{ tag[1].size }})</span></a></li>
+		<li><a href="showTags.html?tag={{ tag[0] }}">{{ tag[0] }} <span style="color: #999999;" >({{ tag[1].size }})</span></a></li>
 		{% endfor %}
 	{% endif %}
 	</ul>

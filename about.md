@@ -16,7 +16,7 @@ HiFLy
 计算机专业毕业，工作{{ current_year | minus: 2005 }} 年。
 
 ## 教育
-- 
+- 1
 
 ## keywords
 <div class="btn-inline">

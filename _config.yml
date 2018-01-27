@@ -3,8 +3,8 @@
 # Jekyll configuration
 
 
-name: 薛海峰的博客
-description: 'A jekyll theme'
+name: 薛海峰
+description: '薛海峰的博客  A jekyll theme'
 
 # url is currently only used only for the RSS feed in feed.xml
 #url: https://scotte.github.io/jekyll-clean

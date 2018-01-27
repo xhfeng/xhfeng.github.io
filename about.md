@@ -2,10 +2,6 @@
 layout: default
 ---
 
-<div class="well bg-info">
-    <h1>About me</h1>
-    <p>Hello, I am me.</p>
-
 {% assign current_year = site.time | date: '%Y' %}
 
 HiFLy
@@ -34,8 +30,6 @@ HiFLy
 | java | ★★★☆☆ | python | ★★★★☆ |
 | C | ★★★☆☆ | javascript | ★★★★☆ |
 | Linux | ★★★★☆ | Photoshop | ★★☆☆☆ |
-
-</div>
 
 
 

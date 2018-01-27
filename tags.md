@@ -18,48 +18,8 @@ layout: default
 </section>
 
 <script type="text/javascript">
-        var jq = jQuery.noConflict();
-        jq(document).ready(function(){             
-
-            jq('.posts a').each(function(index,element){
-                var href = jq(this).attr('href');
-                if(href.indexOf('#') == 0){
-                }else if ( href.indexOf('/') == 0 || href.toLowerCase().indexOf('art.yanping.me')>-1 ){
-                }else{
-                    jq(this).attr('target','_blank');
-                    jq(this).addClass('external');
-                }
-            });
-           
-        }); 
-
+var dataStr = '{ {% for tag in site.tags %}{% if tag[0] != site.tags.first[0] %},{% endif %}"{{ tag[0] }}":[{% for post in tag[1] %}{% if post != tag[1].first %},{% endif %}{"url":"{{post.url}}", "title":"{{post.title}}", "date":"{{post.date | date:"%d/%m/%Y"}}"}{% endfor %}]{% endfor %} }',
+    data = JSON.parse(dataStr),
+    curTag = $.query.get("tag"),
+    archieves = data[curTag];
 </script>
-
-<script type="text/javascript">
-  function showTag(tagStr) {
-    jq.getJSON("../post.json",
-    function(data) {
-      $('#show-tag').empty(content);
-      var content = "<h2>分类：" + tagStr + "</h2><ul class=\"posts\">";
-      var count = 0;
-      jq.each(data,
-      function(i, item) {
-        jq.each(item.tags,
-        function(j, tag) {
-          if (tag == tagStr) {
-            content += "<li class=\"listing-item\"><time datetime=\"" + item.date + "\">" + item.date + "</time><a href=\"" + item.url + "\">" + item.title + "</a></li>";
-            count++;
-          }
-
-        });
-      });
-      if (count > 0) {
-        content += "</ul>";
-        postNumStr = "<span>（" + count + "篇文章）</span>";
-        $('#show-tag').append(content);
-        $('#show-tag>h2').append(postNumStr);
-      }
-    });
-  }
-</script>
-

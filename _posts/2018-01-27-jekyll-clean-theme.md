@@ -3,7 +3,7 @@ layout: post
 title: "Jekyll Clean Theme"
 date: 2018-01-27 19:40:06 +0800
 tags: Jekyll Theme
-category:Jekyll
+categories: Jekyll
 comments: false
 ---
 

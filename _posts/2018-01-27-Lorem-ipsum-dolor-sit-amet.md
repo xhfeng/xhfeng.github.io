@@ -2,6 +2,8 @@
 layout: post
 title: "Lorem ipsum dolor sit amet"
 date: 2018-01-27 19:42:06 +0800
+tags: Jekyll
+category:Jekyll
 comments: true
 ---
 

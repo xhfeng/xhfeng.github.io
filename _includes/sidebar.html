@@ -12,28 +12,14 @@
 </div>
 
 <div class="sidebar well">
+	<h1>Tags</h1>
 	<div id="tag_sidebar">
 	  {% for tag in site.tags %}
-	  <a href="{{site.baseurl}}/tags/?tag={{tag[0] | cgi}}" title="{{ tag[0] }}">
+	  <a href="{{site.baseurl}}/tags?tag={{tag[0] | cgi}}" title="{{ tag[0] }}">
 	    {{ tag[0] }}<sup>{{ tag[1].size }}</sup>&nbsp;
 	  </a>
 	  {% endfor %}
 	</div>
-</div>
-
-<div class="sidebar well">
-    <h1>Tags</h1>
-	<ul>
-	{% if site.tags.first[0] == null %}
-		{% for tag in site.tags %} 
-		<li><a href="#{{ tag }}-ref">{{ tag }} <span >({{ site.tags[tag].size }})</span></a></li>
-		{% endfor %}
-	{% else %}
-		{% for tag in site.tags %} 
-		<li><a href="showTags.html?tag={{ tag[0] }}">{{ tag[0] }} <span style="color: #999999;" >({{ tag[1].size }})</span></a></li>
-		{% endfor %}
-	{% endif %}
-	</ul>
 </div>
 
 <div class="sidebar well">

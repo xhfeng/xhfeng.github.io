@@ -11,11 +11,11 @@
 <div class="sidebar well">
 	<h1>Tags</h1>
 	<div id="tag_sidebar">
-	  {% for tag in site.tags %}
-		   <a href="{{site.baseurl}}/tags?tag={{tag[0] | cgi}}" title="{{ tag[0] }}">
-		   		<span class="label label-warning">{{ tag[0] }}<sup>{{ tag[1].size }}</sup></span>&nbsp;
-		   </a>
-	  {% endfor %}
+	  	{% for tag in site.tags %}
+		   	<a href="{{site.baseurl}}/tags?tag={{tag[0] | cgi}}" title="{{ tag[0] }}" class="btn btn-success btn-sm">
+		   		{{ tag[0] }}<sup>{{ tag[1].size }}</sup>
+		   	</a>
+	  	{% endfor %}
 	</div>
 </div>
 

@@ -15,5 +15,10 @@ layout: default
     {% endfor %}
 </div>
 
+<script type="text/javascript">
+    var tsg = $.query.get("tag");
+    
+</script>
+
 
 

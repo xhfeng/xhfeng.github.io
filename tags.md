@@ -9,7 +9,7 @@ layout: default
             <a href="{{site.baseurl}}/tags?tag={{tag[0] | cgi}}" title="{{ tag[0] }}">{{ tag[0] }}<sup>{{ tag[1].size }}</sup>&nbsp;</a>
 
             {% for post in tag[1] %}
-                <li><small>{{ post[1].title }}</small></li>
+                <li><small>{{ post }}</small></li>
             {% endif %}
 
 

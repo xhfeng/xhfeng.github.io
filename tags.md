@@ -6,11 +6,10 @@ layout: default
 </script>
 
 <div class="well">
-	{{curTag}}
     {% for tag in site.tags %}
-    	{% if tag[0] == {{curTag}} %}
+    	{% if tag[0] == {{ curTag }} %}
 	        <ul>
-	            <a href="{{site.baseurl}}/tags?tag={{tag[0] | cgi}}" title="{{ tag[0] }}">{{ tag[0] }}<sup>{{ tag[1].size }}</sup>&nbsp;</a>
+	            <a href="{{site.baseurl}}/tags?tag={{tag[0] | cgi}}" title="{{ tag[0] }}">{{ tag[0] }}<sup>{{ tag[1].size }}</sup></a>
 
 	            {% for post in tag[1] %}
 	                <li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>

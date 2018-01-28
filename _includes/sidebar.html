@@ -13,7 +13,7 @@
 	<div id="tag_sidebar">
 	  {% for tag in site.tags %}
 		   <a href="{{site.baseurl}}/tags?tag={{tag[0] | cgi}}" title="{{ tag[0] }}">
-		   		<span class="label label-info">{{ tag[0] }}<sup>{{ tag[1].size }}</sup></span>&nbsp;
+		   		<span class="label label-warning">{{ tag[0] }}<sup>{{ tag[1].size }}</sup></span>&nbsp;
 		   </a>
 	  {% endfor %}
 	</div>

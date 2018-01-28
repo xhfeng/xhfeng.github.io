@@ -16,9 +16,7 @@ layout: default
 </div>
 
 <script type="text/javascript">
-    var tsg = $.query.get("tag");
-    
+	var curTag = $.query.get("tag");
 </script>
-
 
 

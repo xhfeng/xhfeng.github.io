@@ -4,7 +4,7 @@ layout: default
 <script type="text/javascript">
 	var curTag = $.query.get("tag");
 
-    var tagss = {{site.tags}};
+    var tagss = <%=curTag%>;
 
 
 /*    var str="<ul>";

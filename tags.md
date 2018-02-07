@@ -36,7 +36,7 @@ layout: default
     {% for tag in site.tags %}
     	<h1><%=curTag%></h1>
     	<h1>{{ tag[0] }}<sup>{{ tag[1].size }}</sup></h1>
-    	{% if tag[0] == <%=curTag%> %}
+    	{% if tag[0] == <%=$.query.get("tag")%> %}
 	        <ul>
 	            <a href="{{site.baseurl}}/tags?tag={{tag[0] | cgi}}" title="{{ tag[0] }}">{{ tag[0] }}<sup>{{ tag[1].size }}</sup></a>
 

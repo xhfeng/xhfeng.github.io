@@ -4,7 +4,17 @@ layout: default
 <script type="text/javascript">
 	var curTag = $.query.get("tag");
 
-    var tagss = {{site.tags}};
+    //var tagss = {{site.tags}};
+
+    var str = "";
+    {% for tag in site.tags %}
+        str += '<h1>' + curTag + '</h1>';
+        str += '<h1>' + {{ tag[0] }} + '<sup>' + {{ tag[1].size }} + '</sup></h1>';
+
+        //<h1>{{ tag[0] }}{{ tag[1].size }}</sup></h1>
+
+    {% endfor %}
+
 
 
 /*    var str="<ul>";
@@ -14,7 +24,8 @@ layout: default
 
     	//date，url，title
     }
-    $("#tags_html").html(str+"</ul>");*/
+*/
+    $("#tags_html").html(str);
 </script>
 
 

@@ -12,9 +12,7 @@
 	<h1>Tags</h1>
 	<div id="tag_sidebar">
 	  	{% for tag in site.tags %}
-		   	<a href="{{site.baseurl}}/tags?tag={{tag[0] | cgi}}" title="{{ tag[0] }}">
-		   		<span class="label label-success">{{ tag[0] }}</span>
-		   	</a><sup>{{ tag[1].size }}</sup>
+		   	<a href="{{site.baseurl}}/tags?tag={{tag[0] | cgi}}" title="{{ tag[0] }}"> <span class="label label-success">{{ tag[0] }}<sup>{{ tag[1].size }}</sup></span></a>
 	  	{% endfor %}
 	</div>
 </div>

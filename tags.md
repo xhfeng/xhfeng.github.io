@@ -6,14 +6,15 @@ layout: default
 
     //var tagss = {{site.tags}};
 
-    var str = "";
+    var str = "<ul>";
     {% for tag in site.tags %}
-        str += '<h1>' + curTag + '</h1>';
-        str += '<h1>{{ tag[0] }}<sup>{{ tag[1].size }}</sup></h1>';
+        str += '<li><h1>' + curTag + '</h1>';
+        str += '<h1>{{ tag[0] }}<sup>{{ tag[1].size }}</sup></h1></li>';
 
         //<h1>{{ tag[0] }}{{ tag[1].size }}</sup></h1>
 
     {% endfor %}
+    str += '</ul>';
 
 
 

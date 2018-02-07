@@ -5,15 +5,15 @@ layout: default
 	var curTag = $.query.get("tag");
     var str = "";
     {% for tag in site.tags %}
-        {% if tag[0] == <%=curTag%> %}
-            str += '<ul>';
-
+        str += '<ul>';
+        {% if tag[0] == '<%=curTag%>' %}
+            
             {% for post in tag[1] %}
                 str +=  '<li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>';
             {% endfor %}
-            
-            str += '</ul>';
+
         {% endif %}
+        str += '</ul>';
     {% endfor %}
     
 

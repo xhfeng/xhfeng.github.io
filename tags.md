@@ -6,7 +6,7 @@ layout: default
     var str = "";
     {% for tag in site.tags %}
         str += '<ul>';
-        {% if tag[0] == '<%=curTag%>' %}
+        {% if tag[0] == 'esp' %}
             
             {% for post in tag[1] %}
                 str +=  '<li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>';

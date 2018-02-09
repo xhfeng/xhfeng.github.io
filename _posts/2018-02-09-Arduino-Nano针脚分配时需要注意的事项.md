@@ -15,3 +15,8 @@ comments: true
 - A6、A7针脚只能用做模拟信号，不能用作数字信号。
 
 一般情况下，除了0、1、13、A6、A7这几个针脚比较特殊外，其他的针脚都可以按照正常功能使用。也就是说，2～12、A0～A5这17个针脚，基本可以放心使用。
+
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2157469"></script>
+<!-- UY END -->

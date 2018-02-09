@@ -16,7 +16,7 @@ layout: default
         }
         shtml += "</ul>";
 
-        $("#test_md").htnl(shtml);
+        $("#test_md").html(shtml);
       }
       ,'jsonp'
   );

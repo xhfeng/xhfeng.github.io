@@ -8,10 +8,11 @@ layout: default
        "http://lp.taobao.com/go/rgn/citydistrictdata.php"
       ,{}
       ,function(data,status,xhr){
-        console.log(data);
+        //console.log(data);
         tnodes = data.nodes;
         shtml = "<ul>";
-        for (var i = tnodes.length - 1; i >= 0; i--) {
+        //for (var i = tnodes.length - 1; i >= 0; i--) {
+        for (var i = 0; i < tnodes.length; i++) {
         	shtml += "<li>" + tnodes[i].id + "</li>";
         }
         shtml += "</ul>";

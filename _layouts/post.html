@@ -22,6 +22,10 @@
                     {{ content }}
                 </div>
 
+                {% if page.comments %}
+                  {% include changliao-comments.html %}
+                {% endif %}
+
 
             </div>
           </div>
@@ -37,6 +41,6 @@
     </div>
 </div>
 
-{% include changliao-comments.html %}
+
 
 {% include footer.html %}

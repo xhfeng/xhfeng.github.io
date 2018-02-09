@@ -4,7 +4,7 @@ title: "Arduino - Nano针脚分配时需要注意的事项"
 date: 2018-02-09 08:42:06 +0800
 categories: Arduino
 tags: [Arduino,Nano]
-comments: true
+comments: false
 ---
 
 

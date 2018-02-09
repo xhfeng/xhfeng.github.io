@@ -24,7 +24,7 @@ baseurl: /
 comments: true
 
 
-permalink: date
+permalink: /blog/:year/:month/:day/:title
 paginate: 3
 recentposts: 10
 

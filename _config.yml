@@ -23,6 +23,7 @@ baseurl: /
 # override 'comments' to disable on a post-by-post basis.
 comments: true
 
+excerpt_separator:'\n\n\n'
 
 permalink: /blog/:year/:month/:day/:title
 paginate: 3

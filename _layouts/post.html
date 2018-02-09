@@ -22,7 +22,7 @@
                     {{ content }}
                 </div>
 
-                {% if page.comments %}
+                {% if site.comments and page.comments %}
                   {% include changliao-comments.html %}
                 {% endif %}
 

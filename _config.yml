@@ -24,6 +24,7 @@ baseurl: /
 comments: true
 
 
+permalink: date
 paginate: 3
 recentposts: 10
 

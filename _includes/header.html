@@ -38,6 +38,9 @@
                     {% if site.github != '' %}
                       <li class="active"><a href="https://github.com/{{ site.github }}">Github</a></li>
                     {% endif %}
+                    {% if site.flyhome != '' %}
+                      <li class="active"><a href="{{ site.flyhome }}">{{ site.flyname }}</a></li>
+                    {% endif %}
                 </ul>
               </div>
             </div>

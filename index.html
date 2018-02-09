@@ -22,7 +22,7 @@ layout: default
         <h1><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a> - <small>{{ post.date | date: "%Y-%m-%d" }}</small></h1>
         <div class="content">
             <!-- {{ post.content }} -->
-            {{ page.excerpt | markdownify }}
+            {{ post.excerpt }}
         </div>
     </div>
 </div>

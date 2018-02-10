@@ -3,21 +3,21 @@ layout: default
 ---
 
 <div class="pagination">
-  {% if paginator.previous_page %}
-      {% if paginator.previous_page == 1 %}
-        <a class="btn btn-default btn-xs" href="{{ site.baseurl}}/index.html" class="previous">上一页</a>
-      {% else %}
-        <a class="btn btn-default btn-xs" href="{{ site.baseurl}}/page{{ paginator.previous_page }}" class="previous">上一页</a>
-      {% endif %}
-  {% endif %}
-  <span class="page_number ">第{{ paginator.page }}页，共{{ paginator.total_pages }}页</span>
-  {% if paginator.next_page %}
-    <a class="btn btn-default btn-xs" href="{{ site.baseurl}}/page{{ paginator.next_page }}" class="next">下一页</a>
-  {% endif %}
+    {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+            <a class="btn btn-default btn-xs" href="{{ site.baseurl}}/index.html" class="previous">上一页</a>
+        {% else %}
+            <a class="btn btn-default btn-xs" href="{{ site.baseurl}}/page{{ paginator.previous_page }}" class="previous">上一页</a>
+        {% endif %}
+    {% endif %}
+
+    <span class="page_number ">第{{ paginator.page }}页，共{{ paginator.total_pages }}页</span>
+    {% if paginator.next_page %}
+        <a class="btn btn-default btn-xs" href="{{ site.baseurl}}/page{{ paginator.next_page }}" class="next">下一页</a>
+    {% endif %}
 </div>
 
 {% for post in paginator.posts %}
-<div class="article">
     <div class="well">
         <h1><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a> - <small>{{ post.date | date: "%Y-%m-%d" }}</small></h1>
         <div class="content">
@@ -28,19 +28,19 @@ layout: default
             {{ post.excerpt }}<a href="{{ site.baseurl}}{{ post.url }}">详细</a>
         </div>
     </div>
-</div>
 {% endfor %}
 
 <div class="pagination">
-  {% if paginator.previous_page %}
-      {% if paginator.previous_page == 1 %}
-        <a class="btn btn-default btn-xs" href="{{ site.baseurl}}/index.html" class="previous">上一页</a>
-      {% else %}
-        <a class="btn btn-default btn-xs" href="{{ site.baseurl}}/page{{ paginator.previous_page }}" class="previous">上一页</a>
-      {% endif %}
-  {% endif %}
-  <span class="page_number ">第{{ paginator.page }}页，共{{ paginator.total_pages }}页</span>
-  {% if paginator.next_page %}
-    <a class="btn btn-default btn-xs" href="{{ site.baseurl}}/page{{ paginator.next_page }}" class="next">下一页</a>
-  {% endif %}
+    {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+            <a class="btn btn-default btn-xs" href="{{ site.baseurl}}/index.html" class="previous">上一页</a>
+        {% else %}
+            <a class="btn btn-default btn-xs" href="{{ site.baseurl}}/page{{ paginator.previous_page }}" class="previous">上一页</a>
+        {% endif %}
+    {% endif %}
+
+    <span class="page_number ">第{{ paginator.page }}页，共{{ paginator.total_pages }}页</span>
+    {% if paginator.next_page %}
+        <a class="btn btn-default btn-xs" href="{{ site.baseurl}}/page{{ paginator.next_page }}" class="next">下一页</a>
+    {% endif %}
 </div>

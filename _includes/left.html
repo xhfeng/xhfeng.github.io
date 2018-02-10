@@ -1,11 +1,13 @@
 
-<div class="sidebar well">
-    <h1>近期文章</h1>
-    <ul>
-        {% for post in site.posts limit:site.recentposts %}
-          <li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
-        {% endfor %}
-    </ul>
+<div class="panel panel-primary">
+	<div class="panel-heading">近期文章</div>
+	<div class="panel-body">
+	    <ul>
+	        {% for post in site.posts limit:site.recentposts %}
+	          <li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
+	        {% endfor %}
+	    </ul>
+    </div>
 </div>
 
 <!-- 
@@ -20,7 +22,8 @@
  -->
 
 <div class="panel panel-default">
+	<div class="panel-heading">友情连接</div>
   	<div class="panel-body">
-    	{% include links-list.html %}Basic panel example
+    	{% include links-list.html %}
   	</div>
 </div>

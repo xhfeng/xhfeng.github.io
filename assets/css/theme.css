@@ -52,5 +52,5 @@ body {
 
 .tttt {
     position: fixed; /* Undo the static from mobile first approach */
-    top: 20px;
+    top: 70px;
 }

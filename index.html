@@ -18,15 +18,15 @@ layout: default
 </div>
 
 {% for post in paginator.posts %}
-    <p class="bg-info">
+<!--     <p class="bg-info">
         <h4><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></h4>
         <small>{{ post.date | date: "%Y-%m-%d" }}</small>
         {% for category in post.categories %}
           <span class="label label-success">{{ category }}</span>
         {% endfor %}
-    </p>
+    </p> -->
 
-<!-- 
+
     <div class="panel panel-default">
         <div class="panel-heading">
             <a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a> - <small>{{ post.date | date: "%Y-%m-%d" }}</small>
@@ -41,7 +41,7 @@ layout: default
         </p>
         </div>
     </div>
-     -->
+
 {% endfor %}
 
 <div class="pagination">

@@ -2,7 +2,8 @@
 layout: default
 ---
 
-<div class="panel panel-default">
+<!-- <div class="panel panel-default"> -->
+<div class="well">
 {%for post in site.posts %}
     {% unless post.next %}
         <h1>{{ post.date | date: '%Y年' }}</h1>

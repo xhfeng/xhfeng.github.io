@@ -18,9 +18,9 @@ layout: default
 </div>
 
 {% for post in paginator.posts %}
-    <div class="well">
-        <h1><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a> - <small>{{ post.date | date: "%Y-%m-%d" }}</small></h1>
-        <div class="content">
+    <div class="panel panel-default">
+        <div class="panel-heading"><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a> - <small>{{ post.date | date: "%Y-%m-%d" }}</small></div>
+        <div class="panel-body">
             <!-- {{ post.content }} -->
             {% for category in post.categories %}
               <span class="label label-success">{{ category }}</span>

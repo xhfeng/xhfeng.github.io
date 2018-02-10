@@ -49,3 +49,8 @@ body {
 .author a {
     color: #ee4444;
 }
+
+.tttt {
+    position: fixed; /* Undo the static from mobile first approach */
+    top: 20px;
+}

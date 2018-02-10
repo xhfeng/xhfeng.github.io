@@ -1,46 +1,43 @@
+
 {% include header.html %}
 
 <div class="container">
     <div class="row">
         <div class="col-md-3 hidden-xs">
-            {% include sidebar.html %}
+            {% include left.html %}
         </div>
         <div class="col-md-9">
             <div class="pagination">
-              {% if page.next %}
+                {% if page.next %}
                     <a class="btn btn-default btn-xs" href="{{ site.baseurl}}{{ page.next.url }}" class="next">上一篇</a>
-              {% endif %}
-              {% if page.previous %}
-                    <a class="btn btn-default btn-xs" href="{{ site.baseurl}}{{ page.previous.url }}" class="previous">下一篇</a>
-              {% endif %}
-          </div>
-          <div class="article">
-            <div class="well">
-                <h1><a href="{{ site.baseurl}}{{ page.url }}">{{ page.title }}</a> <small>{{ page.date | date: "%Y-%m-%d" }}</small></h1>
-
-                <div class="post-content">
-                    {{ content }}
-                </div>
-
-                {% if site.comments and page.comments %}
-                  {% include changliao-comments.html %}
                 {% endif %}
-
-
+                {% if page.previous %}
+                    <a class="btn btn-default btn-xs" href="{{ site.baseurl}}{{ page.previous.url }}" class="previous">下一篇</a>
+                {% endif %}
             </div>
-          </div>
-          <div class="pagination">
-              {% if page.next %}
-                <a class="btn btn-default btn-xs" href="{{ site.baseurl}}{{ page.next.url }}" class="next">上一篇</a>
-              {% endif %}
-              {% if page.previous %}
-                <a class="btn btn-default btn-xs" href="{{ site.baseurl}}{{ page.previous.url }}" class="previous">下一篇</a>
-              {% endif %}
-          </div>
+            <div class="article">
+                <div class="well">
+                    <h1><a href="{{ site.baseurl}}{{ page.url }}">{{ page.title }}</a> <small>{{ page.date | date: "%Y-%m-%d" }}</small></h1>
+
+                    <div class="post-content">
+                        {{ content }}
+                    </div>
+
+                    {% if site.comments and page.comments %}
+                      {% include changliao-comments.html %}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="pagination">
+                {% if page.next %}
+                    <a class="btn btn-default btn-xs" href="{{ site.baseurl}}{{ page.next.url }}" class="next">上一篇</a>
+                {% endif %}
+                {% if page.previous %}
+                    <a class="btn btn-default btn-xs" href="{{ site.baseurl}}{{ page.previous.url }}" class="previous">下一篇</a>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>
-
-
 
 {% include footer.html %}

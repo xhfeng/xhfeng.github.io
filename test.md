@@ -23,8 +23,23 @@ layout: default
   );
 </script>
 
+
 <div id="test_md" class="well"></div>
 
+### 1. 流程图绘制
+
+```flow
+st=>start: 开始
+op=>operation: 作业
+cond=>condition: 是/否?
+e=>结束
+
+st->op->cond
+cond(是)->e
+cond(否)->op
+```
+
+### 2. 表格绘制
 
 | 名称 | 熟悉程度 | 名称 | 熟悉程度 |
 | --: | :--: | --: | :--: |

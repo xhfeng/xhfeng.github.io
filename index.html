@@ -18,11 +18,12 @@ layout: default
 </div>
 
 {% for post in paginator.posts %}
-    <h3>{{ post.title }} <small>{{ post.date | date: "%Y-%m-%d" }}</small></h3>
+    <h3>{{ post.title }} </h3>
+    <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+    {% for category in post.categories %}
+      <span class="label label-success">{{ category }}</span>
+    {% endfor %}
     <p>
-        {% for category in post.categories %}
-          <span class="label label-success">{{ category }}</span>
-        {% endfor %}
         {{ post.excerpt }}<a href="{{ site.baseurl}}{{ post.url }}">详细</a>
     </p>
 

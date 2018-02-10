@@ -35,12 +35,12 @@ layout: default
     <div class="caption">
         <h3><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a> - <small>{{ post.date | date: "%Y-%m-%d" }}</small></h3>
         <p>
-            {% for category in post.categories %}
+            {% for category in post.tags %}
               <span class="label label-success">{{ category }}</span>
             {% endfor %}
-            {{ post.excerpt }}
+            <!-- {{ post.excerpt }} -->
         </p>
-        <p class="text-right"><a href="{{ site.baseurl}}{{ post.url }}">详细</a></p>
+        <!-- <p class="text-right"><a href="{{ site.baseurl}}{{ post.url }}">详细</a></p> -->
     </div>
 
 {% endfor %}

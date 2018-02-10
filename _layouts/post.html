@@ -24,9 +24,6 @@
                 <div class="post-content">
                     {{ content }}
                 </div>
-                {% if site.comments and page.comments %}
-                  {% include changliao-comments.html %}
-                {% endif %}
             </div>
             <div class="pagination">
                 {% if page.next %}
@@ -40,6 +37,10 @@
                     <a class="btn btn-default btn-xs" disabled="disabled" class="previous">下一篇</a>
                 {% endif %}
             </div>
+
+            {% if site.comments and page.comments %}
+                {% include changliao-comments.html %}
+            {% endif %}
         </div>
     </div>
 </div>

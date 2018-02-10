@@ -38,8 +38,9 @@ layout: default
             {% for category in post.categories %}
               <span class="label label-success">{{ category }}</span>
             {% endfor %}
-            {{ post.excerpt }}<a href="{{ site.baseurl}}{{ post.url }}">详细</a>
+            {{ post.excerpt }}
         </p>
+        <p class="text-right"><a href="{{ site.baseurl}}{{ post.url }}">详细</a></p>
     </div>
 
 {% endfor %}

@@ -7,7 +7,7 @@
             {% include left.html %}
         </div>
         <div class="col-md-9">
-            <div class="pagination">
+<!--             <div class="pagination">
                 {% if page.next %}
                     <a class="btn btn-default btn-xs" href="{{ site.baseurl}}{{ page.next.url }}" class="next">上一篇</a>
                 {% else %}
@@ -18,9 +18,12 @@
                 {% else %}
                     <a class="btn btn-default btn-xs" disabled="disabled" class="previous">下一篇</a>
                 {% endif %}
-            </div>
+            </div> -->
             <div class="well">
                 <h1><a href="{{ site.baseurl}}{{ page.url }}">{{ page.title }}</a> <small>{{ page.date | date: "%Y-%m-%d" }}</small></h1>
+                {% for category in post.tags %}
+                    <span class="label label-success">{{ category }}</span>
+                {% endfor %}
                 <div class="post-content">
                     {{ content }}
                 </div>

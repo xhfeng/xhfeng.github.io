@@ -26,3 +26,8 @@ layout: default
 <div id="test_md" class="well"></div>
 
 
+| 名称 | 熟悉程度 | 名称 | 熟悉程度 |
+| --: | :--: | --: | :--: |
+| java | ★★★☆☆ | python | ★★★★☆ |
+| C | ★★★☆☆ | javascript | ★★★★☆ |
+| Linux | ★★★★☆ | Photoshop | ★★☆☆☆ |

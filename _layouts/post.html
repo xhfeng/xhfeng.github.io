@@ -35,9 +35,13 @@
             <div class="pagination">
                 {% if page.next %}
                     <a class="btn btn-default btn-xs" href="{{ site.baseurl}}{{ page.next.url }}" class="next">上一篇</a>
+                {% else %}
+                    <a class="btn btn-default btn-xs" disabled="disabled" class="next">上一篇</a>
                 {% endif %}
                 {% if page.previous %}
                     <a class="btn btn-default btn-xs" href="{{ site.baseurl}}{{ page.previous.url }}" class="previous">下一篇</a>
+                {% else %}
+                    <a class="btn btn-default btn-xs" disabled="disabled" class="previous">下一篇</a>
                 {% endif %}
             </div>
         </div>

@@ -21,8 +21,8 @@
             </div> -->
             <div class="well">
                 <h1><a href="{{ site.baseurl}}{{ page.url }}">{{ page.title }}</a> <small>{{ page.date | date: "%Y-%m-%d" }}</small></h1>
-                {% for category in post.tags %}
-                    <span class="label label-success">{{ category }}</span>
+                {% for tag in page.tags %}
+                    <span class="label label-success">{{ tag }}</span>
                 {% endfor %}
                 <div class="post-content">
                     {{ content }}

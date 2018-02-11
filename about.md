@@ -13,5 +13,4 @@ HiFLy
 - 主页：
 
 
-计算机专业毕业，工作{{ current_year | minus: 2005 }} 年。
 

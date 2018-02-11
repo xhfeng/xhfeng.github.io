@@ -22,15 +22,16 @@ layout: default
       ,'jsonp'
     );
 
-    $.get(
-       "http://xhfeng.freeddns.org:8000"
-      ,{}
-      ,function(data,status,xhr){
-
-        $("#get_home").text(data);
-      }
-      ,'text'
-  );
+    $.ajax({
+        type: "GET",
+        url: "http://xhfeng.freeddns.org:8000",
+        data: {},
+        dataType: "text",
+        success: function(data){
+            $('#resText').empty();   //清空resText里面的所有内容
+            $('#resText').html(data);
+        }
+    });
 
 </script>
 
@@ -40,7 +41,7 @@ layout: default
 
 ### 2. 这是我的猫
 
-<div id="get_home" class="well"></div>
+<div id="resText" class="well"></div>
 
 ### 3. 表格绘制
 
@@ -50,7 +51,7 @@ layout: default
 | C | ★★★☆☆ | javascript | ★★★★☆ |
 | Linux | ★★★★☆ | Photoshop | ★★☆☆☆ |
 
-### 4. 这是一份待办事宜
+### 4. 这是待办事宜
 
 - [ ] 吃堞
 - [ ] 睡觉

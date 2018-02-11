@@ -20,26 +20,29 @@ layout: default
         $("#test_md").html(shtml);
       }
       ,'jsonp'
+    );
+
+    $.get(
+       "http://xhfeng.freeddns.org:8000"
+      ,{}
+      ,function(data,status,xhr){
+
+        $("#get_home").text(data);
+      }
+      ,'text'
   );
+
 </script>
 
+### 1. 这是阿里的数据
 
 <div id="test_md" class="well"></div>
 
-### 1. 流程图绘制
+### 2. 这是我的猫
 
-```flow
-st=>start: 开始
-op=>operation: 作业
-cond=>condition: 是/否?
-e=>结束
+<div id="get_home" class="well"></div>
 
-st->op->cond
-cond(是)->e
-cond(否)->op
-```
-
-### 2. 表格绘制
+### 3. 表格绘制
 
 | 名称 | 熟悉程度 | 名称 | 熟悉程度 |
 | --: | :--: | --: | :--: |
@@ -47,7 +50,7 @@ cond(否)->op
 | C | ★★★☆☆ | javascript | ★★★★☆ |
 | Linux | ★★★★☆ | Photoshop | ★★☆☆☆ |
 
-### 3. 制作一份待办事宜
+### 4. 制作一份待办事宜
 
 - [ ] 支持以 PDF 格式导出文稿
 - [ ] 改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率

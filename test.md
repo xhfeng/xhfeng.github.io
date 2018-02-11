@@ -33,7 +33,9 @@ layout: default
             $('#resText').html(data);
         },
        error: function (xhr, status, errMsg) {
-            console.log(xhr, status, errMsg);
+            console.log("xhr:", xhr);
+            console.log("status:", status);
+            console.log("errMsg:", errMsg);
        }
     });
 

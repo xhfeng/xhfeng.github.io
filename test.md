@@ -25,12 +25,16 @@ layout: default
     $.ajax({
         type: "GET",
         url: "http://xhfeng.freeddns.org:8000",
+        //crossDomain: true,
         data: {},
         dataType: "text",
         success: function(data){
             $('#resText').empty();   //清空resText里面的所有内容
             $('#resText').html(data);
-        }
+        },
+       error: function (xhr, status, errMsg) {
+            console.log(xhr, status, errMsg);
+       }
     });
 
 </script>

@@ -49,7 +49,7 @@ layout: default
     });
   }
   get_data();
-  //get_tbreg();
+  get_tbreg();
 </script>
 
 ### 1. 这是我的盒子
@@ -58,7 +58,7 @@ layout: default
 
 ### 2. 这是阿里的数据
 
-<div id="resTbreg" class="well" onload="get_tbreg();"></div>
+<div id="resTbreg" class="well"></div>
 
 
 

@@ -52,7 +52,7 @@ layout: default
   get_tbreg();
 </script>
 
-### 1. 这是我的盒子
+### 1. 这是我盒子里的数据
 
 <div id="resText" class="well"></div>
 

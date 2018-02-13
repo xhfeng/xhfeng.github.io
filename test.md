@@ -21,10 +21,12 @@ layout: default
       }
       ,'jsonp'
     );
-
+  var murl = "http://xhfeng.freeddns.org:8000";
+  var mone = true;
+  function get_data() {
     $.ajax({
         type: "GET",
-        url: "http://xhfeng.freeddns.org:8000",
+        url: murl,
         //crossDomain: true,
         data: {},
         dataType: "text",
@@ -36,8 +38,16 @@ layout: default
             console.log("xhr:", xhr);
             console.log("status:", status);
             console.log("errMsg:", errMsg);
+            if (mone) {
+              mone = false;
+              murl = "http://192.168.1.20:8000";
+              get_data();
+            }
        }
     });
+  }
+  get_data();
+
 
 </script>
 

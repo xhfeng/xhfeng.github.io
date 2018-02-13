@@ -4,25 +4,27 @@ layout: default
 
 
 <script type="text/javascript">
-	$.get(
-       "http://lp.taobao.com/go/rgn/citydistrictdata.php"
-      ,{}
-      ,function(data,status,xhr){
-        //console.log(data);
-        tnodes = data.nodes;
-        shtml = "<ul>";
-        //for (var i = tnodes.length - 1; i >= 0; i--) {
-        for (var i = 0; i < tnodes.length; i++) {
-        	shtml += "<li>" + tnodes[i].id + "</li>";
-        }
-        shtml += "</ul>";
+  function get_tbreg() {
+    $.get(
+         "http://lp.taobao.com/go/rgn/citydistrictdata.php"
+        ,{}
+        ,function(data,status,xhr){
+          //console.log(data);
+          tnodes = data.nodes;
+          shtml = "<ul>";
+          for (var i = 0; i < tnodes.length; i++) {
+          	shtml += "<li>" + tnodes[i].id + "</li>";
+          }
+          shtml += "</ul>";
 
-        $("#test_md").html(shtml);
-      }
-      ,'jsonp'
-    );
+          $("#resTbreg").html(shtml);
+        }
+        ,'jsonp'
+      );
+    }
   var murl = "http://xhfeng.freeddns.org:8000";
   var mone = true;
+
   function get_data() {
     $.ajax({
         type: "GET",
@@ -31,7 +33,7 @@ layout: default
         data: {},
         dataType: "text",
         success: function(data){
-            $('#resText').empty();   //清空resText里面的所有内容
+            $('#resText').empty();
             $('#resText').html(data);
         },
        error: function (xhr, status, errMsg) {
@@ -47,29 +49,30 @@ layout: default
     });
   }
   get_data();
-
-
+  //get_tbreg();
 </script>
 
-### 1. 这是阿里的数据
-
-<div id="test_md" class="well"></div>
-
-### 2. 这是我的猫
+### 1. 这是我的盒子
 
 <div id="resText" class="well"></div>
 
-### 3. 表格绘制
+### 2. 这是阿里的数据
+
+<div id="resTbreg" class="well" onload="get_tbreg();"></div>
+
+
+
+### 3. 这是表格
 
 | 名称 | 熟悉程度 | 名称 | 熟悉程度 |
-| --: | :--: | --: | :--: |
+| ------: | :------: | ------: | :------: |
 | java | ★★★☆☆ | python | ★★★★☆ |
 | C | ★★★☆☆ | javascript | ★★★★☆ |
 | Linux | ★★★★☆ | Photoshop | ★★☆☆☆ |
 
 ### 4. 这是待办事宜
 
-- [ ] 吃堞
+- [ ] 吃饭
 - [ ] 睡觉
 - [x] 打豆豆
 - [x] 发呆

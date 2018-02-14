@@ -42,7 +42,7 @@ layout: default
             console.log("errMsg:", errMsg);
             if (mone) {
               mone = false;
-              murl = "http://192.168.1.21:8000";
+              murl = "http://192.168.1.20:8000";
               get_data();
             }
        }

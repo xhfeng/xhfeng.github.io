@@ -14,10 +14,10 @@ HiFLy
 - 主页：
 
 <div class="checkbox">
-        <label>
-          <input id="at_home" type="checkbox" onclick="get_tmp_data()"> @home
-        </label>
-      </div>
+    <label>
+        <input id="at_home" type="checkbox" onclick="get_tmp_data()"> @home
+    </label>
+</div>
 <div id="xhf_home_tmp" style="height: 400px"> </div>
 
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
@@ -30,11 +30,11 @@ HiFLy
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
 <script type="text/javascript">
-	var myChart = echarts.init(document.getElementById('xhf_home_tmp'));
-	option = null;
+    var myChart = echarts.init(document.getElementById('xhf_home_tmp'));
+    option = null;
 
-	function set_my_chart(data) {
-		data = data["data"];
+    function set_my_chart(data) {
+        data = data["data"];
         var kt = [];
         var ws = [];
         for (var i = 0; i < data.length; i++) {
@@ -45,7 +45,7 @@ HiFLy
             }
         }
 
-		myChart.setOption(option = {
+        myChart.setOption(option = {
             title: {
                 text: '博主家温度'
             },
@@ -141,13 +141,13 @@ HiFLy
                     }]
                 }
             }]
-	    });
-	}
+        });
+    }
 
-	function get_tmp_data() {
-		var murl = "http://xhfeng.freeddns.org:8000";
-		
-		if($('at_home').prop("checked"))
+    function get_tmp_data() {
+        var murl = "http://xhfeng.freeddns.org:8000";
+        
+        if($('#at_home').prop("checked"))
         {
             murl = "http://192.168.1.20:8000";
             console.log("选中:");
@@ -157,25 +157,25 @@ HiFLy
            console.log("未选中:");
         }
 
-		$.ajax({
-	        type: "GET",
-	        url: murl,
-	        //crossDomain: true,
-	        data: {},
-	        dataType: "json",
-	        success: function(data){
-	            set_my_chart(data);
-	        },
-	       error: function (xhr, status, errMsg) {
-	       }
-    	});
+        $.ajax({
+            type: "GET",
+            url: murl,
+            //crossDomain: true,
+            data: {},
+            dataType: "json",
+            success: function(data){
+                set_my_chart(data);
+            },
+           error: function (xhr, status, errMsg) {
+           }
+        });
 
-	    if (option && typeof option === "object") {
-	        myChart.setOption(option, true);
-	    }
-	}
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    }
 
-	
+    
 </script>
 
 

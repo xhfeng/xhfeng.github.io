@@ -4,7 +4,7 @@ layout: default
 
 
 <script type="text/javascript">
-  function get_tbreg() {
+  function get_tb_reg() {
     $.get(
          "http://lp.taobao.com/go/rgn/citydistrictdata.php"
         ,{}
@@ -13,7 +13,7 @@ layout: default
           tnodes = data.nodes;
           shtml = "<ul>";
           for (var i = 0; i < tnodes.length; i++) {
-          	shtml += "<li>" + tnodes[i].id + "</li>";
+            shtml += "<li>" + tnodes[i].id + "</li>";
           }
           shtml += "</ul>";
 
@@ -22,39 +22,10 @@ layout: default
         ,'jsonp'
       );
     }
-  var murl = "http://xhfeng.freeddns.org:8000";
-  var mone = true;
 
-  function get_data() {
-    $.ajax({
-        type: "GET",
-        url: murl,
-        //crossDomain: true,
-        data: {},
-        dataType: "text",
-        success: function(data){
-            $('#resText').empty();
-            $('#resText').html(data);
-        },
-       error: function (xhr, status, errMsg) {
-            console.log("xhr:", xhr);
-            console.log("status:", status);
-            console.log("errMsg:", errMsg);
-            if (mone) {
-              mone = false;
-              murl = "http://192.168.1.20:8000";
-              get_data();
-            }
-       }
-    });
-  }
-  get_data();
-  get_tbreg();
+  get_tb_reg();
 </script>
 
-### 1. 这是我盒子里的数据
-
-<div id="resText" class="well"></div>
 
 ### 2. 这是阿里的数据
 

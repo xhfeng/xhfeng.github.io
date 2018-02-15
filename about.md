@@ -57,7 +57,7 @@ HiFLy
 	            },
 	            yAxis: {
 	                type: 'value',
-	                min: 18,
+	                min: 10,
 	                splitLine: {
 	                    show: true
 	                }

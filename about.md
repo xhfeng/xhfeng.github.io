@@ -13,7 +13,11 @@ HiFLy
 - 邮箱：ylxhf#163.com
 - 主页：
 
-
+<div class="checkbox">
+        <label>
+          <input id="at_home" type="checkbox" onclick="get_tmp_data()"> @home
+        </label>
+      </div>
 <div id="xhf_home_tmp" style="height: 400px"> </div>
 
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
@@ -26,8 +30,6 @@ HiFLy
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
 <script type="text/javascript">
-	var mone = true;
-	var murl = "http://xhfeng.freeddns.org:8000";
 	var myChart = echarts.init(document.getElementById('xhf_home_tmp'));
 	option = null;
 
@@ -44,122 +46,127 @@ HiFLy
         }
 
 		myChart.setOption(option = {
-	            title: {
-	                text: '博主家温度'
-	            },
-	            tooltip: {
-	                trigger: 'axis'
-	            },
-	            xAxis: {
-	                data: kt.map(function (item) {
-	                    return item["created"];
-	                })
-	            },
-	            yAxis: {
-	                type: 'value',
-	                min: 15,
-	                splitLine: {
-	                    show: true
-	                }
-	            },
-	            toolbox: {
-	                left: 'center',
-	                feature: {
-	                    dataZoom: {
-	                        yAxisIndex: 'none'
-	                    },
-	                    restore: {},
-	                    saveAsImage: {}
-	                }
-	            },
-	            dataZoom: [{
-	                startValue: kt[kt.length-50]["created"]
-	            }, {
-	                type: 'inside'
-	            }],
-	            visualMap: {
-	                top: 10,
-	                right: 10,
-	                pieces: [{
-	                    gt: 0,
-	                    lte: 18,
-	                    color: '#660099'
-	                },{
-	                    gt: 18,
-	                    lte: 26,
-	                    color: '#096'
-	                }, {
-	                    gt: 26,
-	                    color: '#cc0033'
-	                }],
-	                outOfRange: {
-	                    color: '#999'
-	                }
-	            },
-	            series: [{
-	                name: '客厅温度',
-	                type: 'line',
-	                data: kt.map(function (item) {
-	                    return item["value"];
-	                }),
-	                smooth: true,
-	                markLine: {
-	                    silent: true,
-	                    data: [{
-	                        yAxis: 50
-	                    }, {
-	                        yAxis: 100
-	                    }, {
-	                        yAxis: 150
-	                    }, {
-	                        yAxis: 200
-	                    }, {
-	                        yAxis: 300
-	                    }]
-	                }
-	            },{
-	                name: '卧室温度',
-	                type: 'line',
-	                data: ws.map(function (item) {
-	                    return item["value"];
-	                }),
-	                smooth: true,
-	                markLine: {
-	                    silent: true,
-	                    data: [{
-	                        yAxis: 50
-	                    }, {
-	                        yAxis: 100
-	                    }, {
-	                        yAxis: 150
-	                    }, {
-	                        yAxis: 200
-	                    }, {
-	                        yAxis: 300
-	                    }]
-	                }
-	            }]
+            title: {
+                text: '博主家温度'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            xAxis: {
+                data: kt.map(function (item) {
+                    return item["created"];
+                })
+            },
+            yAxis: {
+                type: 'value',
+                min: 15,
+                splitLine: {
+                    show: true
+                }
+            },
+            toolbox: {
+                left: 'center',
+                feature: {
+                    dataZoom: {
+                        yAxisIndex: 'none'
+                    },
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            dataZoom: [{
+                startValue: kt[kt.length-50]["created"]
+            }, {
+                type: 'inside'
+            }],
+            visualMap: {
+                top: 10,
+                right: 10,
+                pieces: [{
+                    gt: 0,
+                    lte: 18,
+                    color: '#660099'
+                },{
+                    gt: 18,
+                    lte: 26,
+                    color: '#096'
+                }, {
+                    gt: 26,
+                    color: '#cc0033'
+                }],
+                outOfRange: {
+                    color: '#999'
+                }
+            },
+            series: [{
+                name: '客厅温度',
+                type: 'line',
+                data: kt.map(function (item) {
+                    return item["value"];
+                }),
+                smooth: true,
+                markLine: {
+                    silent: true,
+                    data: [{
+                        yAxis: 50
+                    }, {
+                        yAxis: 100
+                    }, {
+                        yAxis: 150
+                    }, {
+                        yAxis: 200
+                    }, {
+                        yAxis: 300
+                    }]
+                }
+            },{
+                name: '卧室温度',
+                type: 'line',
+                data: ws.map(function (item) {
+                    return item["value"];
+                }),
+                smooth: true,
+                markLine: {
+                    silent: true,
+                    data: [{
+                        yAxis: 50
+                    }, {
+                        yAxis: 100
+                    }, {
+                        yAxis: 150
+                    }, {
+                        yAxis: 200
+                    }, {
+                        yAxis: 300
+                    }]
+                }
+            }]
 	    });
-
-
 	}
+
 	function get_tmp_data() {
+		var murl = "http://xhfeng.freeddns.org:8000";
+		
+		if($('at_home').prop("checked"))
+        {
+            murl = "http://192.168.1.20:8000";
+            console.log("选中:");
+        }
+        else{
+           murl = "http://xhfeng.freeddns.org:8000";
+           console.log("未选中:");
+        }
 
 		$.ajax({
 	        type: "GET",
 	        url: murl,
 	        //crossDomain: true,
 	        data: {},
-	        dataType: "text",
+	        dataType: "json",
 	        success: function(data){
 	            set_my_chart(data);
 	        },
 	       error: function (xhr, status, errMsg) {
-	            if (mone) {
-	              mone = false;
-	              murl = "http://192.168.1.20:8000";
-	              get_tmp_data();
-	            }
 	       }
     	});
 
@@ -168,7 +175,7 @@ HiFLy
 	    }
 	}
 
-	get_tmp_data();
+	
 </script>
 
 

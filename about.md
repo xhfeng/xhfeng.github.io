@@ -57,7 +57,7 @@ HiFLy
 	            },
 	            yAxis: {
 	                type: 'value',
-	                min: 10,
+	                min: 15,
 	                splitLine: {
 	                    show: true
 	                }
@@ -81,20 +81,16 @@ HiFLy
 	                top: 10,
 	                right: 10,
 	                pieces: [{
-	                    gt: -40,
-	                    lte: 10,
-	                    color: '#ff9933'
+	                    gt: 0,
+	                    lte: 18,
+	                    color: '#660099'
 	                },{
-	                    gt: 10,
+	                    gt: 18,
 	                    lte: 26,
 	                    color: '#096'
 	                }, {
 	                    gt: 26,
-	                    lte: 40,
-	                    color: '#ffde33'
-	                }, {
-	                    gt: 42,
-	                    color: '#ffde33'
+	                    color: '#cc0033'
 	                }],
 	                outOfRange: {
 	                    color: '#999'

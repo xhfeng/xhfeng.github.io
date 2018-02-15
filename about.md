@@ -154,8 +154,8 @@ HiFLy
             console.log("选中:");
         }
         else{
-           murl = "http://xhfeng.freeddns.org:8000";
-           console.log("未选中:");
+            murl = "http://xhfeng.freeddns.org:8000";
+            console.log("未选中:");
         }
 
         $.ajax({

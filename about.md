@@ -14,7 +14,7 @@ HiFLy
 - 主页：
 
 
-<div id="xhf_home_tmp" style="height: 100%"> </div>
+<div id="xhf_home_tmp" style="height: 400px"> </div>
 
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>

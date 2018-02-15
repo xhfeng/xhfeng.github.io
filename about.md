@@ -26,24 +26,24 @@ HiFLy
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
 <script type="text/javascript">
+	var mone = true;
 	var murl = "http://xhfeng.freeddns.org:8000";
-	murl = 'http://192.168.1.20:8000/';
 	var myChart = echarts.init(document.getElementById('xhf_home_tmp'));
-
 	option = null;
-	function get_tmpdata() {
-	    $.get(murl, function (data) {
-	        data = data["data"];
-	        var kt = [];
-	        var ws = [];
-	        for (var i = 0; i < data.length; i++) {
-	            if (data[i]["did"] == "28FFA83CB416399") {
-	                kt.push(data[i]);
-	            } else {
-	                ws.push(data[i]);
-	            }
-	        }
-	        myChart.setOption(option = {
+
+	function set_my_chart(data) {
+		data = data["data"];
+        var kt = [];
+        var ws = [];
+        for (var i = 0; i < data.length; i++) {
+            if (data[i]["did"] == "28FFA83CB416399") {
+                kt.push(data[i]);
+            } else {
+                ws.push(data[i]);
+            }
+        }
+
+		myChart.setOption(option = {
 	            title: {
 	                text: '博主家温度'
 	            },
@@ -139,14 +139,36 @@ HiFLy
 	                    }]
 	                }
 	            }]
-	        });
 	    });
+
+
+	}
+	function get_tmp_data() {
+
+		$.ajax({
+	        type: "GET",
+	        url: murl,
+	        //crossDomain: true,
+	        data: {},
+	        dataType: "text",
+	        success: function(data){
+	            set_my_chart(data);
+	        },
+	       error: function (xhr, status, errMsg) {
+	            if (mone) {
+	              mone = false;
+	              murl = "http://192.168.1.20:8000";
+	              get_tmp_data();
+	            }
+	       }
+    	});
+
 	    if (option && typeof option === "object") {
 	        myChart.setOption(option, true);
 	    }
 	}
 
-	get_tmpdata();
+	get_tmp_data();
 </script>
 
 

@@ -47,7 +47,7 @@ HiFLy
 
         myChart.setOption(option = {
             title: {
-                text: '博主家温度'
+                text: '家里温度'
             },
             tooltip: {
                 trigger: 'axis'
@@ -150,11 +150,8 @@ HiFLy
         if($('#at_home').prop("checked"))
         {
             murl = "http://192.168.1.20:8000";
-            console.log("选中:");
-        }
-        else{
+        }else{
             murl = "http://xhfeng.freeddns.org:8000";
-            console.log("未选中:");
         }
 
         $.ajax({

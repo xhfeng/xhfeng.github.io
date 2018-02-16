@@ -30,7 +30,6 @@ HiFLy
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
 <script type="text/javascript">
-    //setTimeout(get_tmp_data(), 10*1000);
     var myChart = echarts.init(document.getElementById('xhf_home_tmp'));
     option = null;
 
@@ -174,7 +173,8 @@ HiFLy
         if (option && typeof option === "object") {
             myChart.setOption(option, true);
         }
-    } 
+    }
+    var t1 = window.setInterval(get_tmp_data, 10*1000);
 </script>
 
 

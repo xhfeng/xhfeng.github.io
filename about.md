@@ -8,10 +8,6 @@ layout: default
 HiFLy
 ===
 {{ site.description }}
-## 概况
-
-- 邮箱：ylxhf#163.com
-- 主页：
 
 <div class="checkbox">
     <label>

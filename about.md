@@ -79,16 +79,19 @@ HiFLy
                 top: 10,
                 right: 10,
                 pieces: [{
+                    lte: 0,
+                    color: '#0080FF'
+                },{
                     gt: 0,
                     lte: 18,
-                    color: '#660099'
+                    color: '#0000FF'
                 },{
                     gt: 18,
                     lte: 26,
-                    color: '#096'
+                    color: '#65CC66'
                 }, {
                     gt: 26,
-                    color: '#cc0033'
+                    color: '#CC0033'
                 }],
                 outOfRange: {
                     color: '#999'
@@ -141,13 +144,11 @@ HiFLy
     }
 
     function get_tmp_data() {
-        var murl = "http://xhfeng.freeddns.org:8000";
+        var murl = "http://xhf.dynu.net:8000";
         
         if($('#at_home').prop("checked"))
         {
             murl = "http://192.168.1.20:8000";
-        }else{
-            murl = "http://xhfeng.freeddns.org:8000";
         }
 
         $.ajax({

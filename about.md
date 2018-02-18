@@ -67,8 +67,8 @@ HiFLy
                 type: 'group',
                 rotation: Math.PI / 4,
                 bounding: 'raw',
-                left: 120,
-                top: 120,
+                right: 90,
+                bottom: 90,
                 z: 100,
                 children: [
                     {
@@ -77,8 +77,8 @@ HiFLy
                         top: 'center',
                         z: 100,
                         shape: {
-                            width: 400,
-                            height: 50
+                            width: 300,
+                            height: 30
                         },
                         style: {
                             fill: 'rgba(0,0,0,0.3)'//,
@@ -94,7 +94,7 @@ HiFLy
                         style: {
                             fill: '#fff',
                             text: '家  里  温  度',
-                            font: 'bold 30px Microsoft YaHei'
+                            font: 'bold 22px Microsoft YaHei'
                         }
                     }
                 ]

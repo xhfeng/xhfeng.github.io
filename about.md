@@ -67,25 +67,10 @@ HiFLy
                 type: 'group',
                 rotation: Math.PI / 4,
                 bounding: 'raw',
-                right: 90,
-                bottom: 90,
+                right: 160,
+                bottom: 130,
                 z: 100,
                 children: [
-                    {
-                        type: 'rect',
-                        left: 'center',
-                        top: 'center',
-                        z: 100,
-                        shape: {
-                            width: 300,
-                            height: 30
-                        },
-                        style: {
-                            fill: 'rgba(0,0,0,0.3)'//,
-                            //text: '家  里  温  度',
-                            //font: 'bold 30px Microsoft YaHei'
-                        }
-                    },
                     {
                         type: 'text',
                         left: 'center',
@@ -95,6 +80,18 @@ HiFLy
                             fill: '#fff',
                             text: '家  里  温  度',
                             font: 'bold 22px Microsoft YaHei'
+                        }
+                    },
+                    {
+                        type: 'polygon',
+                        //invisible: true,
+                        shape: {
+                            points: [[-80, 20], [-120, -20], [120, -20], [80, 20]]
+                        },
+                        style: {
+                            fill: 'rgba(0,0,0,0.3)'//,
+                            //text: '家  里  温  度',
+                            //font: 'bold 30px Microsoft YaHei'
                         }
                     }
                 ]

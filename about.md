@@ -100,7 +100,6 @@ HiFLy
                 ]
             }],
             toolbox: {
-                left: 'center',
                 feature: {
                     dataZoom: {
                         yAxisIndex: 'none'

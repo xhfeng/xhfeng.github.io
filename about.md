@@ -56,7 +56,7 @@ HiFLy
             yAxis: {
                 type: 'value',
                 axisLabel: {
-                    formatter: '{value} °C'
+                    formatter: '{value}℃'
                 },
                 min: 15,
                 splitLine: {
@@ -86,7 +86,7 @@ HiFLy
                         type: 'polygon',
                         //invisible: true,
                         shape: {
-                            points: [[-80, 20], [-120, -20], [120, -20], [80, 20]]
+                            points: [[-80, 20], [-120, -20], [125, -20], [85, 20]]
                         },
                         style: {
                             fill: 'rgba(0,0,0,0.3)'//,

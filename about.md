@@ -114,8 +114,8 @@ HiFLy
                 type: 'inside'
             }],
             visualMap: {
-                top: 10,
-                right: 10,
+                bottom: 70,
+                left: 100,
                 pieces: [{
                     lte: 0,
                     color: '#0080FF'

@@ -55,47 +55,50 @@ HiFLy
             },
             yAxis: {
                 type: 'value',
+                axisLabel: {
+                    formatter: '{value} °C'
+                },
                 min: 15,
                 splitLine: {
                     show: true
                 }
             },
-        graphic:[{
-            type: 'group',
-            rotation: Math.PI / 4,
-            bounding: 'raw',
-            left: 120,
-            top: 120,
-            z: 100,
-            children: [
-                {
-                    type: 'rect',
-                    left: 'center',
-                    top: 'center',
-                    z: 100,
-                    shape: {
-                        width: 400,
-                        height: 50
+            graphic:[{
+                type: 'group',
+                rotation: Math.PI / 4,
+                bounding: 'raw',
+                left: 120,
+                top: 120,
+                z: 100,
+                children: [
+                    {
+                        type: 'rect',
+                        left: 'center',
+                        top: 'center',
+                        z: 100,
+                        shape: {
+                            width: 400,
+                            height: 50
+                        },
+                        style: {
+                            fill: 'rgba(0,0,0,0.3)'//,
+                            //text: '家  里  温  度',
+                            //font: 'bold 30px Microsoft YaHei'
+                        }
                     },
-                    style: {
-                        fill: 'rgba(0,0,0,0.3)'//,
-                        //text: '家  里  温  度',
-                        //font: 'bold 30px Microsoft YaHei'
+                    {
+                        type: 'text',
+                        left: 'center',
+                        top: 'center',
+                        z: 100,
+                        style: {
+                            fill: '#fff',
+                            text: '家  里  温  度',
+                            font: 'bold 30px Microsoft YaHei'
+                        }
                     }
-                },
-                {
-                    type: 'text',
-                    left: 'center',
-                    top: 'center',
-                    z: 100,
-                    style: {
-                        fill: '#fff',
-                        text: '家  里  温  度',
-                        font: 'bold 30px Microsoft YaHei'
-                    }
-                }
-            ]
-        }],
+                ]
+            }],
             toolbox: {
                 left: 'center',
                 feature: {

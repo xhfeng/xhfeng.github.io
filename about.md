@@ -51,7 +51,18 @@ HiFLy
             xAxis: {
                 data: kt.map(function (item) {
                     return item["created"];
-                })
+                }),
+            axisLabel: {
+                    formatter: function (value, index) {
+                        // 格式化成月/日，只在第一个刻度显示年份
+                        var date = new Date(value);
+                        var texts = [(date.getMonth() + 1), date.getDate()];
+                        if (index === 0) {
+                            texts.unshift(date.getYear());
+                        }
+                        return texts.join('-');
+                    }
+                }
             },
             yAxis: {
                 type: 'value',

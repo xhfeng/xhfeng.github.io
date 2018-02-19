@@ -65,8 +65,8 @@ HiFLy
                         if (index === 0) {
                             texts.unshift(date.getFullYear());
                         }
-                        return texts.join('-');
-                        //return texts.join('-') + " " + date.getHours() + ":" + date.getMinutes();
+                        //return texts.join('-');
+                        return texts.join('-') + " " + date.getHours() + ":" + date.getMinutes();
                     }
                 }
             },
@@ -75,7 +75,7 @@ HiFLy
                 axisLabel: {
                     formatter: '{value}℃'
                 },
-                min: 15,
+                min: 10,
                 splitLine: {
                     show: true
                 }

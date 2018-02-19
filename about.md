@@ -153,7 +153,7 @@ HiFLy
                 name: '客厅温度',
                 type: 'line',
                 data: kt.map(function (item) {
-                    return item["value"];
+                    return item["value"].toFixed(2);
                 }),
                 smooth: true,
                 markLine: {
@@ -174,7 +174,7 @@ HiFLy
                 name: '主卧温度',
                 type: 'line',
                 data: ws1.map(function (item) {
-                    return item["value"];
+                    return item["value"].toFixed(2);
                 }),
                 smooth: true,
                 markLine: {
@@ -195,7 +195,7 @@ HiFLy
                 name: '次卧温度',
                 type: 'line',
                 data: ws2.map(function (item) {
-                    return item["value"];
+                    return item["value"].toFixed(2);
                 }),
                 smooth: true,
                 markLine: {

@@ -3,4 +3,5 @@
 # This can be '' to hide the Github nav button
 github: 'xhfeng'
 
-flyhome: 'http://vfly.f3322.net:8800'
+flyhome: 'http://xhf.dynu.net:8000'
+flyhome1: 'http://192.168.1.20:8000'

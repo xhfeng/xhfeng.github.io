@@ -221,7 +221,8 @@ HiFLy
         
         if($('#at_home').prop("checked"))
         {
-            murl = "http://192.168.1.20:8000";
+            //murl = "http://192.168.1.20:8000";
+            murl = "{{ site.data.xhfeng.flyhome1 }}";
         }
 
         $.ajax({

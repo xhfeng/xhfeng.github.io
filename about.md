@@ -7,11 +7,11 @@ layout: default
 
 HiFLy
 ===
-
+{{ site.description }}
 
 <div class="checkbox">
     <label>
-        {{ site.description }} <input id="at_home" type="checkbox" onclick="get_tmp_data()">
+        <input id="at_home" type="checkbox" onclick="get_tmp_data()">
     </label>
 </div>
 <div id="xhf_home_tmp" style="height: 400px"> </div>

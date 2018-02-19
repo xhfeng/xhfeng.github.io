@@ -32,12 +32,17 @@ HiFLy
     function set_my_chart(data) {
         data = data["data"];
         var kt = [];
-        var ws = [];
+        var ws1 = [];
+        var ws2 = [];
         for (var i = 0; i < data.length; i++) {
-            if (data[i]["did"] == "28FFA83CB416399") {
+            if (data[i]["did"] == "28FFE1826017344") {
                 kt.push(data[i]);
-            } else {
-                ws.push(data[i]);
+            }
+            if (data[i]["did"] == "28FFA83CB416399") {
+                ws1.push(data[i]);
+            }
+            if (data[i]["did"] == "28FFE99E017476") {
+                ws2.push(data[i]);
             }
         }
 
@@ -166,9 +171,30 @@ HiFLy
                     }]
                 }
             },{
-                name: '卧室温度',
+                name: '主卧温度',
                 type: 'line',
-                data: ws.map(function (item) {
+                data: ws1.map(function (item) {
+                    return item["value"];
+                }),
+                smooth: true,
+                markLine: {
+                    silent: true,
+                    data: [{
+                        yAxis: 50
+                    }, {
+                        yAxis: 100
+                    }, {
+                        yAxis: 150
+                    }, {
+                        yAxis: 200
+                    }, {
+                        yAxis: 300
+                    }]
+                }
+            },{
+                name: '次卧温度',
+                type: 'line',
+                data: ws2.map(function (item) {
                     return item["value"];
                 }),
                 smooth: true,

@@ -80,3 +80,6 @@ cd sublime-text-imfix && ./sublime-imfix
 ```
 
 4. 完成! 重新启动后就可以在sublime text 3! 
+
+感谢原作者的工作
+https://github.com/lyfeyaj/sublime-text-imfix

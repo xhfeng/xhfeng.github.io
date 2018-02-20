@@ -3,7 +3,7 @@ layout: post
 title: "Sublime Text 3 build 3143"
 date: 2018-02-20 19:28:00 +0800
 categories: [Sublime Text]
-tags: [Sublime,3143]
+tags: [Sublime,3143,激活,中文,输入,错位]
 comments: true
 ---
 

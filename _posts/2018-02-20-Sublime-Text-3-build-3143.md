@@ -55,7 +55,7 @@ E36B85CC 84991F19 7575D828 470A92AB
 ```
 
 
-输入中文问题
+中文输入
 ============
 
 ubuntu下不能输入中文
@@ -83,3 +83,39 @@ cd sublime-text-imfix && ./sublime-imfix
 
 感谢原作者的工作
 https://github.com/lyfeyaj/sublime-text-imfix
+
+
+中文错位
+============
+
+使用 文泉驿微米黑等宽 字体解决sublime 3143版本上述字体错位, 空格缩小的问题, 步骤如下:
+
+1. 从ubuntu apt安装源安装文泉驿微米黑字体:
+```
+sudo apt-get install ttf-wqy-microhei
+```
+
+2. 安装完成后,在sublime的Preferences->settings配置文件中加入 文泉驿微米黑等宽 字体:
+
+```
+"font_face": "WenQuanYi Micro Hei Mono",
+```
+   中文版在菜单 设置->用户设置（或为 首选项->设置）配置文件中加入 文泉驿微米黑等宽 字体:
+```
+"font_face": "文泉驿等宽微米黑",
+```
+
+   我的配置为：
+
+```
+
+{
+	"font_face": "文泉驿等宽微米黑",
+	"font_size": 10.5,
+	"ignored_packages":
+	[
+		"Vintage"
+	]
+}
+```
+

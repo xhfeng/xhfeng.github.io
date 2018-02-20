@@ -55,67 +55,69 @@ E36B85CC 84991F19 7575D828 470A92AB
 ```
 
 
-中文输入
+中文输入问题
 ============
 
-ubuntu下不能输入中文
+ubuntu(xubuntu)下不能输入中文问题
 
 1. 首先，将你的操作系统升级到最新版
 
-```
-sudo apt-get update
-sudo apt-get upgrade
-```
+	```
+	sudo apt-get update
+	sudo apt-get upgrade
+	```
 
 2. clone修复项目到本地
 
-```
-git clone https://github.com/lyfeyaj/sublime-text-imfix.git
-```
+	```
+	git clone https://github.com/lyfeyaj/sublime-text-imfix.git
+	```
 
 3. 运行脚本
 
-```
-cd sublime-text-imfix && ./sublime-imfix
-```
+	```
+	cd sublime-text-imfix && ./sublime-imfix
+	```
 
 4. 完成! 重新启动后就可以在sublime text 3! 
 
-感谢原作者的工作
-https://github.com/lyfeyaj/sublime-text-imfix
+	感谢原作者的工作
+	https://github.com/lyfeyaj/sublime-text-imfix
 
 
-中文错位
+中文错位问题
 ============
 
-使用 文泉驿微米黑等宽 字体解决sublime 3143版本上述字体错位, 空格缩小的问题, 步骤如下:
+ubuntu(xubuntu)下中文字体错位问题。
+使用 文泉驿微米黑等宽 字体解决sublime 3143版本上述字体错位,空格缩小的问题,当然你也可以使用别的字体试试。
+具体步骤如下:
 
 1. 从ubuntu apt安装源安装文泉驿微米黑字体:
-```
-sudo apt-get install ttf-wqy-microhei
-```
+
+	```
+	sudo apt-get install ttf-wqy-microhei
+	```
 
 2. 安装完成后,在sublime的Preferences->settings配置文件中加入 文泉驿微米黑等宽 字体:
 
-```
-"font_face": "WenQuanYi Micro Hei Mono",
-```
-   中文版在菜单 设置->用户设置（或为 首选项->设置）配置文件中加入 文泉驿微米黑等宽 字体:
-```
-"font_face": "文泉驿等宽微米黑",
-```
+	```
+	"font_face": "WenQuanYi Micro Hei Mono",
+	```
+	   中文版在菜单 设置->用户设置（或为 首选项->设置）配置文件中加入 文泉驿微米黑等宽 字体:
+	```
+	"font_face": "文泉驿等宽微米黑",
+	```
 
    我的配置为：
 
-```
-
-{
-	"font_face": "文泉驿等宽微米黑",
-	"font_size": 10.5,
-	"ignored_packages":
-	[
-		"Vintage"
-	]
-}
-```
+	```
+	{
+		"font_face": "文泉驿等宽微米黑",
+		"font_size": 10.5,
+		"ignored_packages":
+		[
+			"Vintage"
+		]
+	}
+	```
 

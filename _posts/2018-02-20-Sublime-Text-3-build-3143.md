@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Sublime Text 3 build 3143"
-date: 2018-02-05 17:12:00 +0800
-categories: [Sublime]
+date: 2018-02-20 19:28:00 +0800
+categories: [Sublime Text]
 tags: [Sublime,3143]
 comments: true
 ---
@@ -54,3 +54,29 @@ E36B85CC 84991F19 7575D828 470A92AB
 —— END LICENSE ——
 ```
 
+
+输入中文问题
+============
+
+ubuntu下不能输入中文
+
+1. 首先，将你的操作系统升级到最新版
+
+```
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+2. clone修复项目到本地
+
+```
+git clone https://github.com/lyfeyaj/sublime-text-imfix.git
+```
+
+3. 运行脚本
+
+```
+cd sublime-text-imfix && ./sublime-imfix
+```
+
+4. 完成! 重新启动后就可以在sublime text 3! 

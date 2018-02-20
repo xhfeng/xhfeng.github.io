@@ -83,9 +83,8 @@ https://github.com/lyfeyaj/sublime-text-imfix
 
 中文错位问题
 ============
-
 ubuntu(xubuntu)下中文字体错位问题。
-使用 文泉驿微米黑等宽 字体解决sublime 3143版本上述字体错位,空格缩小的问题,当然你也可以使用别的字体试试。
+使用 文泉驿等宽微米黑 字体解决sublime 3143版本上述字体错位,空格缩小的问题,当然你也可以使用别的字体试试。
 具体步骤如下:
 
 1. 从ubuntu apt安装源安装文泉驿微米黑字体:
@@ -93,15 +92,16 @@ ubuntu(xubuntu)下中文字体错位问题。
 sudo apt-get install ttf-wqy-microhei
 ```
 
-2. 安装完成后,在sublime的Preferences->settings配置文件中加入 文泉驿微米黑等宽 字体:
+2. 安装完成后,在sublime的Preferences->settings配置文件中加入 文泉驿等宽微米黑 字体:
 ```
 "font_face": "WenQuanYi Micro Hei Mono",
 ```
-   中文版在菜单 设置->用户设置（或为 首选项->设置）配置文件中加入 文泉驿微米黑等宽 字体:
+   中文版在菜单 设置->用户设置（或为 首选项->设置）配置文件中加入 文泉驿等宽微米黑 字体:
 ```
 "font_face": "文泉驿等宽微米黑",
 ```
-   我的配置为：
+
+3. 这个是我的配置：
 ```
 {
 	"font_face": "文泉驿等宽微米黑",

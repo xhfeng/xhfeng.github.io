@@ -24,6 +24,9 @@ HiFLy
 <script type="text/javascript">
     var ajax = null;
     var myChart = echarts.init(document.getElementById('xhf_home_tmp'));
+    myChart.on('datazoom', function (params) {
+        console.log('datazoom', params);
+    });
 
 
     function show_my_chart(data, textStatus) {
@@ -211,7 +214,6 @@ HiFLy
                 }
             }]
         };
-
         if (option && typeof option === "object") {
             myChart.setOption(option);
         }

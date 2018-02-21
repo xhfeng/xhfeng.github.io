@@ -23,6 +23,7 @@ HiFLy
 
 <script type="text/javascript">
     var myChart = echarts.init(document.getElementById('xhf_home_tmp'));
+    option = null;
     myChart.setOption({
         title: {
             text: '家里温度'
@@ -117,7 +118,7 @@ HiFLy
             }
         }
 
-        myChart.setOption({
+        myChart.setOption(option = {
             title: {
                 text: '家里温度'
             },
@@ -289,6 +290,7 @@ HiFLy
 
     function get_tmp_data() {
         var murl = "{{ site.data.xhfeng.flyhome }}";
+        
         if($('#at_home').prop("checked"))
         {
             murl = "{{ site.data.xhfeng.flyhome1 }}";
@@ -306,6 +308,10 @@ HiFLy
            error: function (xhr, status, errMsg) {
            }
         });
+
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
     }
     var t1 = window.setInterval(get_tmp_data, 10*1000);
 </script>

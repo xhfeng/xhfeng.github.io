@@ -22,6 +22,7 @@ HiFLy
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
 
 <script type="text/javascript">
+    var ajax = null;
     var myChart = echarts.init(document.getElementById('xhf_home_tmp'));
     myChart.setOption({
         title: {
@@ -288,19 +289,22 @@ HiFLy
     }
 
     function get_tmp_data() {
+        if (ajax) {
+            ajax..abort();
+        }
         var murl = "{{ site.data.xhfeng.flyhome }}";
         if($('#at_home').prop("checked"))
         {
             murl = "{{ site.data.xhfeng.flyhome1 }}";
         }
 
-        $.ajax({
+        ajax = $.ajax({
             type: "GET",
             url: murl,
             //crossDomain: true,
             data: {},
             dataType: "json",
-            success: show_my_chart(data, textStatus),
+            success: show_my_chart,
            error: function (xhr, status, errMsg) {
            }
         });

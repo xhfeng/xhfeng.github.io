@@ -24,50 +24,7 @@ HiFLy
 <script type="text/javascript">
     var ajax = null;
     var myChart = echarts.init(document.getElementById('xhf_home_tmp'));
-    var option = {
-        title: {
-            text: '家里温度'
-        },
-        tooltip: {
-            trigger: 'axis'
-        },
-        xAxis: {},
-        yAxis: {},
-        graphic:[{
-            type: 'group',
-            rotation: Math.PI / 4,
-            bounding: 'raw',
-            right: 160,
-            bottom: 130,
-            z: 100,
-            children: [
-                {
-                    type: 'text',
-                    left: 'center',
-                    top: 'center',
-                    z: 100,
-                    style: {
-                        fill: '#fff',
-                        text: '家  里  温  度',
-                        font: 'bold 22px Microsoft YaHei'
-                    }
-                },
-                {
-                    type: 'polygon',
-                    //invisible: true,
-                    shape: {
-                        points: [[-80, 20], [-120, -20], [125, -20], [85, 20]]
-                    },
-                    style: {
-                        fill: 'rgba(0,0,0,0.3)'
-                    }
-                }
-            ]
-        }]
-    };
-    if (option && typeof option === "object") {
-        myChart.setOption(option);
-    }
+
 
     function show_my_chart(data, textStatus) {
         data = data["data"];

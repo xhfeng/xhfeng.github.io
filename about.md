@@ -300,7 +300,7 @@ HiFLy
             //crossDomain: true,
             data: {},
             dataType: "json",
-            success: show_my_chart,
+            success: show_my_chart(data, textStatus),
            error: function (xhr, status, errMsg) {
            }
         });

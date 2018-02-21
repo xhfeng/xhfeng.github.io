@@ -24,8 +24,7 @@ HiFLy
 <script type="text/javascript">
     var ajax = null;
     var myChart = echarts.init(document.getElementById('xhf_home_tmp'));
-    option = null;
-    myChart.setOption({
+    var option = {
         title: {
             text: '家里温度'
         },
@@ -64,18 +63,11 @@ HiFLy
                     }
                 }
             ]
-        }],
-        toolbox: {
-            feature: {
-                dataZoom: {
-                    yAxisIndex: 'none'
-                },
-                restore: {},
-                saveAsImage: {}
-            }
-        },
-        series: []
-    });
+        }]
+    };
+    if (option && typeof option === "object") {
+        myChart.setOption(option);
+    }
 
     function show_my_chart(data, textStatus) {
         data = data["data"];
@@ -94,7 +86,7 @@ HiFLy
             }
         }
 
-        myChart.setOption(option = {
+        option = {
             title: {
                 text: '家里温度'
             },
@@ -261,7 +253,11 @@ HiFLy
                     }]
                 }
             }]
-        });
+        };
+
+        if (option && typeof option === "object") {
+            myChart.setOption(option);
+        }
     }
 
     function get_tmp_data() {
@@ -284,10 +280,6 @@ HiFLy
            error: function (xhr, status, errMsg) {
            }
         });
-
-        if (option && typeof option === "object") {
-            myChart.setOption(option, true);
-        }
     }
     var t1 = window.setInterval(get_tmp_data, 10*1000);
 </script>

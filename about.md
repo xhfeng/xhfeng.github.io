@@ -290,7 +290,7 @@ HiFLy
 
     function get_tmp_data() {
         if (ajax) {
-            ajax..abort();
+            ajax.abort();
         }
         var murl = "{{ site.data.xhfeng.flyhome }}";
         if($('#at_home').prop("checked"))

@@ -305,7 +305,7 @@ HiFLy
             data: {},
             dataType: "json",
             success: function (data) {
-                show_my_chart()data;
+                show_my_chart(data);
             },
            error: function (xhr, status, errMsg) {
            }

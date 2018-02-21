@@ -20,17 +20,86 @@ HiFLy
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
-<!-- 
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
- -->
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
 
 <script type="text/javascript">
     var myChart = echarts.init(document.getElementById('xhf_home_tmp'));
     option = null;
+    myChart.setOption({
+            title: {
+                text: '家里温度'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            xAxis: {},
+            yAxis: {},
+            graphic:[{
+                type: 'group',
+                rotation: Math.PI / 4,
+                bounding: 'raw',
+                right: 160,
+                bottom: 130,
+                z: 100,
+                children: [
+                    {
+                        type: 'text',
+                        left: 'center',
+                        top: 'center',
+                        z: 100,
+                        style: {
+                            fill: '#fff',
+                            text: '家  里  温  度',
+                            font: 'bold 22px Microsoft YaHei'
+                        }
+                    },
+                    {
+                        type: 'polygon',
+                        //invisible: true,
+                        shape: {
+                            points: [[-80, 20], [-120, -20], [125, -20], [85, 20]]
+                        },
+                        style: {
+                            fill: 'rgba(0,0,0,0.3)'
+                        }
+                    }
+                ]
+            }],
+            toolbox: {
+                feature: {
+                    dataZoom: {
+                        yAxisIndex: 'none'
+                    },
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            dataZoom: [{}, {
+                type: 'inside'
+            }],
+            visualMap: {
+                bottom: 70,
+                left: 100,
+                pieces: [{
+                    lte: 0,
+                    color: '#0080FF'
+                },{
+                    gt: 0,
+                    lte: 18,
+                    color: '#0000FF'
+                },{
+                    gt: 18,
+                    lte: 26,
+                    color: '#65CC66'
+                }, {
+                    gt: 26,
+                    color: '#CC0033'
+                }],
+                outOfRange: {
+                    color: '#999'
+                }
+            },
+            series: []
+        });
 
     function show_my_chart(data) {
         data = data["data"];
@@ -60,7 +129,7 @@ HiFLy
                 data: kt.map(function (item) {
                     return item["created"];
                 }),
-            axisLabel: {
+                axisLabel: {
                     formatter: function (value, index) {
                         // 格式化成月/日，只在第一个刻度显示年份
                         var date = new Date(value);

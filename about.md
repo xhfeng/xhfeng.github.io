@@ -100,7 +100,7 @@ HiFLy
         series: []
     });
 
-    function show_my_chart(data) {
+    function show_my_chart(data, textStatus) {
         data = data["data"];
         var kt = [];
         var ws1 = [];

@@ -101,7 +101,7 @@ HiFLy
         series: []
     });
 
-    function show_my_chart(data, textStatus) {
+    function show_my_chart(data) {
         data = data["data"];
         var kt = [];
         var ws1 = [];
@@ -304,7 +304,9 @@ HiFLy
             //crossDomain: true,
             data: {},
             dataType: "json",
-            success: show_my_chart,
+            success: function (data) {
+                show_my_chart()data;
+            },
            error: function (xhr, status, errMsg) {
            }
         });

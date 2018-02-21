@@ -23,10 +23,24 @@ HiFLy
 
 <script type="text/javascript">
     var ajax = null;
+    var t1 = null;
     var myChart = echarts.init(document.getElementById('xhf_home_tmp'));
     myChart.on('datazoom', function (params) {
         console.log('datazoom', params);
+        if (t1) {
+            window.clearInterval(t1);
+        }
     });
+    
+    myChart.on('restore', function (params) {
+        console.log('restore', params);
+        if (t1) {
+            window.clearInterval(t1);
+        }
+        doit();
+    });
+
+
 
 
     function show_my_chart(data, textStatus) {
@@ -240,7 +254,12 @@ HiFLy
            }
         });
     }
-    var t1 = window.setInterval(get_tmp_data, 10*1000);
+    function doit() {
+        // body...window.clearInterval(int)
+        t1 = window.setInterval(get_tmp_data, 10*1000);
+    }
+    doit();
+   
 </script>
 
 

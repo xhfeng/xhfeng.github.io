@@ -6,6 +6,9 @@
 name: HiFly
 description: '生命不止，折腾不休！'
 
+timezone:    PRC
+encoding: "utf-8"
+
 # url is currently only used only for the RSS feed in feed.xml
 #url: https://scotte.github.io/jekyll-clean
 url: http://xuehaifeng.cn

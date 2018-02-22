@@ -49,6 +49,6 @@ body {
 .author a {
     color: #ee4444;
 }
-ul {
+.panel-body ul {
     margin-left: -30px;
 }

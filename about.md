@@ -40,22 +40,22 @@ HiFLy
 
     function show_my_chart(data, textStatus) {
 
-        var xdt = data["xAxis"];
-        var start = data["start"];
+        //var xdt = data["xAxis"];
+        //var start = data["start"];
         var kt = [];
         var ws1 = [];
         var ws2 = [];
 
-        data = data["data"];
-        for (var i = 0; i < data.length; i++) {
-            if (data[i]["did"] == "28FFE1826017344") {
-                kt.push(data[i]);
+        var tmps = data["data"];
+        for (var i = 0; i < tmps.length; i++) {
+            if (tmps[i]["did"] == "28FFE1826017344") {
+                kt.push(tmps[i]);
             }
-            if (data[i]["did"] == "28FFA83CB416399") {
-                ws1.push(data[i]);
+            if (tmps[i]["did"] == "28FFA83CB416399") {
+                ws1.push(tmps[i]);
             }
-            if (data[i]["did"] == "28FFE99E017476") {
-                ws2.push(data[i]);
+            if (tmps[i]["did"] == "28FFE99E017476") {
+                ws2.push(tmps[i]);
             }
         }
 
@@ -67,9 +67,7 @@ HiFLy
                 trigger: 'axis'
             },
             xAxis: {
-                data: xdt.map(function (item) {
-                    return item;
-                }),
+                data: data["xAxis"],
                 axisLabel: {
                     formatter: function (value, index) {
                         // 格式化成月/日，只在第一个刻度显示年份
@@ -137,7 +135,7 @@ HiFLy
             },
             dataZoom: [{
                 //startValue: xdt[xdt.length-50]
-                startValue: start
+                startValue: data["xStart"]
             }, {
                 type: 'inside'
             }],

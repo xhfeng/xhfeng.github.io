@@ -135,7 +135,8 @@ HiFLy
                 }
             },
             dataZoom: [{
-                startValue: xdt[xdt.length-50]
+                //startValue: xdt[xdt.length-50]
+                startValue: new Date(new Date(new Date().toLocaleDateString()).getTime());
             }, {
                 type: 'inside'
             }],

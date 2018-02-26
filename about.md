@@ -39,6 +39,15 @@ HiFLy
     });
 
     function show_my_chart(data, textStatus) {
+
+        var sdt = new Date('2018-01-01 18:00:00');
+        var ndt = new Date();
+        xdt = [];
+        while(sdt < ndt){
+            xdt.push(sdt);
+            sdt.setHours(sdt.getHours()+1);
+        }
+
         data = data["data"];
         var kt = [];
         var ws1 = [];
@@ -63,8 +72,8 @@ HiFLy
                 trigger: 'axis'
             },
             xAxis: {
-                data: kt.map(function (item) {
-                    return item["created"];
+                data: xdt.map(function (item) {
+                    return item;
                 }),
                 axisLabel: {
                     formatter: function (value, index) {

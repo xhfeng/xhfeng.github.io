@@ -41,6 +41,7 @@ HiFLy
     function show_my_chart(data, textStatus) {
 
         var xdt = data["xAxis"];
+        var start = data["start"];
         var kt = [];
         var ws1 = [];
         var ws2 = [];
@@ -136,7 +137,7 @@ HiFLy
             },
             dataZoom: [{
                 //startValue: xdt[xdt.length-50]
-                startValue: new Date(new Date(new Date().toLocaleDateString()).getTime())
+                startValue: start
             }, {
                 type: 'inside'
             }],

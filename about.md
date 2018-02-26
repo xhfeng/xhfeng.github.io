@@ -136,7 +136,7 @@ HiFLy
             },
             dataZoom: [{
                 //startValue: xdt[xdt.length-50]
-                startValue: new Date(new Date(new Date().toLocaleDateString()).getTime());
+                startValue: new Date(new Date(new Date().toLocaleDateString()).getTime())
             }, {
                 type: 'inside'
             }],

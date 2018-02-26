@@ -40,12 +40,11 @@ HiFLy
 
     function show_my_chart(data, textStatus) {
 
-        //var sdt = new Date('2018-01-01 18:00:00');
         var xdt = data["xAxis"];
         var kt = [];
         var ws1 = [];
         var ws2 = [];
-        
+
         data = data["data"];
         for (var i = 0; i < data.length; i++) {
             if (data[i]["did"] == "28FFE1826017344") {
@@ -136,7 +135,7 @@ HiFLy
                 }
             },
             dataZoom: [{
-                startValue: kt[kt.length-50]["created"]
+                startValue: xdt[xdt.length-50]
             }, {
                 type: 'inside'
             }],

@@ -177,7 +177,7 @@ HiFLy
         }
 
         ajax = $.ajax({
-            type: "GET",
+            type: "post",
             url: murl,
             //crossDomain: true,
             data: {},

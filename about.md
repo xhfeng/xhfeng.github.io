@@ -169,18 +169,7 @@ HiFLy
                 }),
                 smooth: true,
                 markLine: {
-                    silent: true,
-                    data: [{
-                        yAxis: 50
-                    }, {
-                        yAxis: 100
-                    }, {
-                        yAxis: 150
-                    }, {
-                        yAxis: 200
-                    }, {
-                        yAxis: 300
-                    }]
+                    silent: true
                 }
             },{
                 name: '主卧温度',
@@ -190,18 +179,7 @@ HiFLy
                 }),
                 smooth: true,
                 markLine: {
-                    silent: true,
-                    data: [{
-                        yAxis: 50
-                    }, {
-                        yAxis: 100
-                    }, {
-                        yAxis: 150
-                    }, {
-                        yAxis: 200
-                    }, {
-                        yAxis: 300
-                    }]
+                    silent: true
                 }
             },{
                 name: '次卧温度',
@@ -211,18 +189,7 @@ HiFLy
                 }),
                 smooth: true,
                 markLine: {
-                    silent: true,
-                    data: [{
-                        yAxis: 50
-                    }, {
-                        yAxis: 100
-                    }, {
-                        yAxis: 150
-                    }, {
-                        yAxis: 200
-                    }, {
-                        yAxis: 300
-                    }]
+                    silent: true
                 }
             }]
         };

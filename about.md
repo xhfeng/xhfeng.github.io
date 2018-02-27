@@ -42,21 +42,19 @@ HiFLy
 
         //var xdt = data["xAxis"];
         //var start = data["start"];
-        var kt = [];
-        var ws1 = [];
-        var ws2 = [];
-
         var tmps = data["data"];
+        var series = [];
+
         for (var i = 0; i < tmps.length; i++) {
-            if (tmps[i]["did"] == "28FFE1826017344") {
-                kt.push(tmps[i]);
-            }
-            if (tmps[i]["did"] == "28FFA83CB416399") {
-                ws1.push(tmps[i]);
-            }
-            if (tmps[i]["did"] == "28FFE99E017476") {
-                ws2.push(tmps[i]);
-            }
+
+            var item = {};
+            item['name'] = tmps[i]['name'];
+            item['type'] = 'line';
+            item['data'] = tmps[i]['data'];
+            item['smooth'] = true;
+            item['markLine'] = { silent: true};
+
+            series.push(item);
         }
 
         option = {
@@ -161,37 +159,7 @@ HiFLy
                     color: '#999'
                 }
             },
-            series: [{
-                name: '客厅温度',
-                type: 'line',
-                data: kt.map(function (item) {
-                    return item["value"].toFixed(2);
-                }),
-                smooth: true,
-                markLine: {
-                    silent: true
-                }
-            },{
-                name: '主卧温度',
-                type: 'line',
-                data: ws1.map(function (item) {
-                    return item["value"].toFixed(2);
-                }),
-                smooth: true,
-                markLine: {
-                    silent: true
-                }
-            },{
-                name: '次卧温度',
-                type: 'line',
-                data: ws2.map(function (item) {
-                    return item["value"].toFixed(2);
-                }),
-                smooth: true,
-                markLine: {
-                    silent: true
-                }
-            }]
+            series: series
         };
         if (option && typeof option === "object") {
             myChart.setOption(option);

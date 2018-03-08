@@ -56,6 +56,7 @@ HiFLy
 
             series.push(item);
         }
+        //var timeData = data["xAxis"];
 
         option = {
             title: {
@@ -65,7 +66,9 @@ HiFLy
                 trigger: 'axis'
             },
             xAxis: {
-                data: data["xAxis"],
+                data: data["xAxis"].map(function (str) {
+                return str.replace('2018-', '');
+            }),
                 axisLabel: {
                     formatter: function (value, index) {
                         // 格式化成月/日，只在第一个刻度显示年份

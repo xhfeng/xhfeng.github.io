@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TensorFlow学习-(1)快速入门"
+title: "TensorFlow学习-(1)小白入门"
 date: 2018-03-06 14:02:00 +0800
 categories: [tensorflow]
 tags: [tensorflow]
@@ -34,23 +34,18 @@ pip3 install tensorflow-gpu
 TensorFlow基础概念
 ============
 
-* <b>Graph</b>图：用来表示计算任务，就是我们要做的一些操作。
+* <b>Graph</b>图：用来表示计算任务(描述 op 的执行步骤)。
 
-* <b>Session</b>会话：在会话 (Session) 的上下文 (context) 中执行图；
+* <b>Session</b>会话：在会话 (Session) 中执行图；
 
-  建立会话，此时会生成一张空图；在会话中添加节点和边，形成一张图，一个会话可以有多个图，通过执行这些图得到结果。如果把每个图看做一个操作台，那会话就是一个生成线，里面有若干个操作台，用来把数据生产成结果。
+* <b>Tensor</b>张量：用来表示数据(使用 tensor 数据结构来代表所有的数据,计算图中,操作间传递的数据都是 tensor. 你可以看作是一个 n 维的数组或列表, 一个 tensor 包含一个静态类型 rank, 和 一个 shape)。
 
+* <b>Variable</b>变量：维护图执行过程中的状态信息，用来记录数据和维护状态。
 
-* <b>Tensor</b>张量：用来表示数据，是我们的原料。
-
-* <b>Variable</b>变量：用来记录一些数据和维护状态。
-
-* <b>feed和fetch</b>：可以为任意的操作(arbitrary operation) 赋值或者从其中获取数据。相当于一些操作台上的工具，可以操作数据。
+* <b>feed和fetch</b>：可以为任意的操作(arbitrary operation) 赋值或者从其中获取数据。
 
 
 TensorFlow 是一个编程系统, 使用图来表示计算任务. 图中的节点被称之为 op (operation 的缩写). 一个 op 获得 0 个或多个 Tensor, 执行计算, 产生 0 个或多个 Tensor. 每个 Tensor 是一个类型化的多维数组. 例如, 你可以将一小组图像集表示为一个四维浮点数数组, 这四个维度分别是 [batch, height, width, channels].
 
 一个 TensorFlow 图描述了计算的过程. 为了进行计算, 图必须在 会话 里被启动. 会话 将图的 op 分发到诸如 CPU 或 GPU 之类的 设备 上, 同时提供执行 op 的方法. 这些方法执行后, 将产生的 tensor 返回. 在 Python 语言中, 返回的 tensor 是 numpy ndarray 对象; 在 C 和 C++ 语言中, 返回的 tensor 是 tensorflow::Tensor 实例.
 
-TensorFlow综述
-============

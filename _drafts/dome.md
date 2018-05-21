@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "TensorFlow-入门"
-date: 2018-02-06 20:12:00 +0800
+title: "TensorFlow学习-(1)快速入门"
+date: 2018-03-06 14:02:00 +0800
 categories: [tensorflow]
 tags: [tensorflow]
 comments: true
